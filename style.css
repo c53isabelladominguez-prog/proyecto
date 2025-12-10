@@ -1,0 +1,236 @@
+/*
+  ESTILOS CSS SENCILLOS PARA COFFE SHOP
+  --------------------------------------
+  Este archivo contiene todo el diseño de la página.
+  Puedes cambiar los colores, fuentes y tamaños para personalizar tu web.
+  Los comentarios como este te explican qué hace cada parte del código.
+*/
+
+/* --- 1. Estilos Generales para toda la página --- */
+body {
+    font-family: Arial, sans-serif; /* Tipo de letra principal. Puedes cambiarlo por "Georgia", "Verdana", etc. */
+    background-color: #f4f4f4;      /* Color de fondo de la página (un gris muy claro) */
+    color: #181919;                 /* Color del texto principal (gris oscuro) */
+    margin: 0;                      /* Quita el margen que los navegadores ponen por defecto */
+    padding: 0;                     /* Quita el relleno que los navegadores ponen por defecto */
+    display: flex;                  /* Activa el modo "Flexbox" para el body */
+    flex-direction: column;         /* Apila los elementos (header, main, footer) en una columna vertical */
+    min-height: 100vh;              /* Hace que el body ocupe, como mínimo, el 100% de la altura de la pantalla */
+}
+
+/* --- 2. Contenedor Principal --- */
+/* Usamos esta clase para centrar el contenido y evitar que ocupe toda la pantalla */
+.container {
+    width: 90%;                     /* El contenido ocupará el 90% del ancho de la pantalla */
+    max-width: 1000px;              /* Pero como máximo, medirá 1000 pixeles de ancho */
+    margin: 0 auto;                 /* Esto centra el contenedor horizontalmente (el 'auto' lo hace mágico) */
+}
+
+/* --- 3. Encabezado y Logo --- */
+header {
+    background-color: #ffffff;      /* Fondo blanco para la barra de navegación */
+    padding: 20px;                  /* Espacio por dentro del encabezado para que no se vea apretado */
+    border-bottom: 2px solid #eeeeee; /* Línea gris clarita para separar el menú del resto */
+}
+
+.logo {
+    font-size: 32px;                /* Tamaño de letra para el logo "Coffe Shop" */
+    font-weight: bold;              /* Letra en negrita */
+    color: #90774b;                 /* Color café para el texto del logo */
+    text-decoration: none;          /* Le quita el subrayado a los links */
+}
+
+/* --- 4. Menú de Navegación --- */
+nav {
+    float: right;                   /* Alinea el menú a la derecha del encabezado */
+    margin-top: 10px;               /* Un pequeño margen para que el menú baje un poco y se alinee con el logo */
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;                /* Coloca los elementos del menú uno al lado del otro */
+    margin-left: 20px;              /* Espacio entre cada opción del menú */
+}
+
+nav ul li a {
+    color: #d4a266;                 /* Color para los links del menú */
+    text-decoration: none;          /* Le quita el subrayado */
+    font-size: 16px;                /* Tamaño de letra de los links */
+}
+
+/* Esto cambia el color del link cuando pasas el ratón por encima */
+nav ul li a:hover {
+    color: #a67b5b;                 /* Color café claro */
+}
+
+/* Esta clase la ponemos en el HTML para saber en qué página estamos */
+.active {
+    color: #b47f59;                 /* Le pone el color café al link de la página actual */
+}
+
+
+/* --- 5. Sección de Bienvenida (Hero) --- */
+.hero {
+    background-color: #337dc3;      /* Ponemos un color de fondo oscuro por si la imagen no carga */
+    background-image: url('images/BANNER.png'); /* ¡IMPORTANTE! Cambia 'hero-bg.jpg' por tu imagen */
+    background-size: cover;         /* La imagen de fondo cubre todo el espacio */
+    background-position: center;    /* La imagen se centra */
+    padding: 80px 20px;             /* Relleno para hacer la sección más alta */
+    text-align: center;             /* Centra todo el texto */
+    color: #ffffff;                 /* Color de texto blanco para que resalte */
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 20px;
+}
+
+/* --- 6. Botones --- */
+.cta-button {
+    background-color: #6f4e37;      /* Color de fondo del botón */
+    color: #ffffff;                 /* Color del texto del botón */
+    padding: 12px 25px;             /* Relleno para hacerlo más grande */
+    text-decoration: none;          /* Quita el subrayado */
+    border-radius: 5px;             /* Redondea las esquinas del botón */
+    margin-top: 20px;               /* Espacio arriba del botón */
+}
+
+/* Cambia el color del botón al pasar el ratón por encima */
+.cta-button:hover {
+    background-color: #a67b5b;
+}
+
+
+/* --- 7. Secciones de Contenido General --- */
+.content-section {
+    background-color: #ffffff;      /* Fondo blanco para las cajas de contenido */
+    padding: 40px;                  /* Relleno por todos los lados */
+    margin-top: 30px;               /* Espacio entre las secciones */
+    border: 1px solid #dddddd;      /* Borde gris claro */
+}
+
+.content-section h2 {
+    font-size: 36px;
+    color: #a97957;
+    text-align: center;             /* Centra los títulos de sección */
+    margin-top: 0;                  /* Quita el margen superior del título */
+}
+
+/* --- 8. Pie de Página --- */
+footer {
+    background-color: #333333;      /* Fondo gris oscuro para el pie de página */
+    color: #ffffff;                 /* Texto blanco */
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+}
+
+.image{
+    text-align: center;
+}
+
+
+/* REGLA PARA EMPUJAR EL FOOTER HACIA ABAJO --- */
+main {
+    flex-grow: 1; /* Le dice a la sección <main> que crezca y ocupe todo el espacio vertical disponible */
+}
+/* --- Carrusel con efecto de desvanecido y controles --- */
+.carousel {
+  max-width: 800px;
+  position: relative;
+  margin: 40px auto 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.slides {
+  display: none;
+}
+
+.slides img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+}
+
+/* Efecto de desvanecido */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+
+/* Flechas de navegación */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 10px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  transition: background-color 0.3s;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.4);
+}
+
+/* Puntos indicadores */
+.dots-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.dot {
+  cursor: pointer;
+  height: 14px;
+  width: 14px;
+  margin: 0 4px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+
+.active-dot, .dot:hover {
+  background-color: #6f4e37;
+}
+    /* Contenedores para centrar y dar estilo */
+        .video-container {
+            background: white;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 700px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        video, iframe {
+            width: 100%;
+            border-radius: 10px;
+            border: 2px solid #ccc;
+        }

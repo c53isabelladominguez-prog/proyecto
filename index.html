@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan it</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">Plan it</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Inicio</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="mision.html">Misión</a></li>
+                    <li><a href="vision.html">Visión</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="contacto.html">Contáctanos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Creamos momentos, diseñamos recuerdos</h1>
+            <p>Transformamos tus ideas en celebraciones perfectas, con decoración y pasteles que encantan.</p>
+            <a href="nosotros.html" class="cta-button">Conoce nuestra historia</a>
+        </section>
+
+        <div class="container">
+            <section class="content-section">
+                <h2>Bienvenido a Plan it</h2>
+                <p>Brindamos servicios de decoración de eventos y pasteles personalizados en Acapulco, con servicio rápido y profesional.
+                </p>
+
+                <div class="carousel">
+  <div class="slides fade">
+    <img src="images/foto1.jpeg" alt="Decoración 1">
+  </div>
+  <div class="slides fade">
+    <img src="images/foto2.jpeg" alt="Decoración 2">
+  </div>
+  <div class="slides fade">
+    <img src="images/foto3.jpeg" alt="Decoración 3">
+  </div>
+  <div class="slides fade">
+    <img src="images/foto4.jpeg" alt="Decoración 4">
+  </div>
+  <div class="slides fade">
+    <img src="images/foto5.jpeg" alt="Decoración 5">
+  </div>
+
+  <!-- Controles -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+<!-- Puntos indicadores -->
+<div class="dots-container">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+  <span class="dot" onclick="currentSlide(4)"></span>
+  <span class="dot" onclick="currentSlide(5)"></span>
+</div>
+
+<script>
+let slideIndex = 0;
+let slideTimer;
+
+function showSlides() {
+  const slides = document.getElementsByClassName("slides");
+  const dots = document.getElementsByClassName("dot");
+
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) { slideIndex = 1 }
+
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active-dot", "");
+  }
+
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active-dot";
+  slideTimer = setTimeout(showSlides, 4000); // cada 4 segundos
+}
+
+function plusSlides(n) {
+  clearTimeout(slideTimer);
+  slideIndex += n - 1;
+  showSlides();
+}
+
+function currentSlide(n) {
+  clearTimeout(slideTimer);
+  slideIndex = n - 1;
+  showSlides();
+}
+
+document.addEventListener("DOMContentLoaded", showSlides);
+</script>
+
+
+                 <div class="image">
+                    <img src="images/inicio.png" alt="Mapa de ubicación o fachada de la tienda"width="500">
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; Plan it. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
